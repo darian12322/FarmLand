@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dltvdrs5tvolh"]
+
+[ext_resource type="Texture2D" uid="uid://bgfqmrknh5hu8" path="res://Game/1Scene/4Shop_Carpenter_Interior/Texture/Dead_head.png" id="1_0otq5"]
+
+[node name="Head" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_0otq5")

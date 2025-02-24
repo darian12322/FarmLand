@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dslqwkw2s6b1q"]
+
+[ext_resource type="Script" path="res://Game/3UI/Shop_Menu/Script/bucket_2.gd" id="1_w6unc"]
+[ext_resource type="Texture2D" uid="uid://ftlspatteyhe" path="res://Game/3UI/Shop_Menu/Texture/Bucket_empty2-sheet.png" id="2_g6m0c"]
+[ext_resource type="PackedScene" uid="uid://du62rn1envr4d" path="res://Game/4Sounds/buying.tscn" id="3_6gp8w"]
+
+[node name="Bucket2" type="RigidBody2D"]
+script = ExtResource("1_w6unc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(31.5, 31.5)
+scale = Vector2(4.9375, 4.9375)
+texture = ExtResource("2_g6m0c")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="buying" parent="." instance=ExtResource("3_6gp8w")]
+volume_db = 1.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

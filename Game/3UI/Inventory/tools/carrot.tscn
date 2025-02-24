@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5qgqekkfrltj"]
+
+[ext_resource type="Texture2D" uid="uid://i3j6rflspamk" path="res://Game/3UI/Inventory/Texture/Carrot.png" id="1_7f6tp"]
+
+[node name="Carrot" type="TextureRect"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 18.0
+offset_right = -1074.0
+offset_bottom = -567.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7f6tp")

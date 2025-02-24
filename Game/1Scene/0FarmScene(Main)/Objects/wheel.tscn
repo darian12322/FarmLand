@@ -1,0 +1,201 @@
+[gd_scene load_steps=27 format=3 uid="uid://3j64ruivsbl0"]
+
+[ext_resource type="Script" path="res://Game/1Scene/0FarmScene(Main)/Objects/script/wheel.gd" id="1_gu75o"]
+[ext_resource type="Texture2D" uid="uid://bty74gridn0s6" path="res://Game/1Scene/0FarmScene(Main)/Texture/Wheel_head_animation.png" id="3_7r63s"]
+[ext_resource type="Texture2D" uid="uid://doulbouaksuga" path="res://Game/1Scene/0FarmScene(Main)/Texture/Wheel_head_animation_selected.png" id="3_iyule"]
+[ext_resource type="Texture2D" uid="uid://u5otbch7s0cj" path="res://Game/1Scene/0FarmScene(Main)/Texture/Wheel_bottom.png" id="4_danha"]
+[ext_resource type="Texture2D" uid="uid://c67xqurja12q0" path="res://Game/1Scene/0FarmScene(Main)/Texture/Wheel_bottom_selected.png" id="5_4qcys"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pchs6"]
+atlas = ExtResource("3_7r63s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p13pm"]
+atlas = ExtResource("3_7r63s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mkln"]
+atlas = ExtResource("3_7r63s")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqmbh"]
+atlas = ExtResource("3_7r63s")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd120"]
+atlas = ExtResource("3_7r63s")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57cap"]
+atlas = ExtResource("3_7r63s")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbwy0"]
+atlas = ExtResource("3_7r63s")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1rhk"]
+atlas = ExtResource("3_7r63s")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_033qc"]
+atlas = ExtResource("3_7r63s")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flske"]
+atlas = ExtResource("3_iyule")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w08n5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pchs6")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p13pm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mkln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqmbh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd120")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57cap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbwy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1rhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_033qc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p13pm")
+}],
+"loop": false,
+"name": &"Moving",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flske")
+}],
+"loop": true,
+"name": &"Selected",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7psoj"]
+atlas = ExtResource("4_danha")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01j08"]
+atlas = ExtResource("5_4qcys")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fvxrp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7psoj")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01j08")
+}],
+"loop": true,
+"name": &"Selected",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0kv6"]
+size = Vector2(24.7742, 0.774193)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dvq8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkgx4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m06ep"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg58a"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c0yjl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bv0uj"]
+radius = 59.0085
+
+[node name="Wheel" type="StaticBody2D"]
+z_as_relative = false
+script = ExtResource("1_gu75o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+position = Vector2(39, 24)
+scale = Vector2(1.9375, 1.9375)
+sprite_frames = SubResource("SpriteFrames_w08n5")
+animation = &"Moving"
+autoplay = "Idle"
+
+[node name="AnimatedSprite2D1" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(39, 24)
+scale = Vector2(1.938, 1.938)
+sprite_frames = SubResource("SpriteFrames_fvxrp")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(39, 23)
+scale = Vector2(1.9375, 1.9375)
+shape = SubResource("RectangleShape2D_l0kv6")
+
+[node name="Detection" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 23.0
+offset_right = 61.0
+offset_bottom = 52.0
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxFlat_8dvq8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bkgx4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m06ep")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dg58a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c0yjl")
+
+[node name="Trigger_area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger_area"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(39, 33)
+shape = SubResource("CircleShape2D_bv0uj")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="mouse_entered" from="Detection" to="." method="_on_detection_mouse_entered"]
+[connection signal="mouse_exited" from="Detection" to="." method="_on_detection_mouse_exited"]
+[connection signal="pressed" from="Detection" to="." method="_on_detection_pressed"]
+[connection signal="body_entered" from="Trigger_area" to="." method="_on_trigger_area_body_entered"]
+[connection signal="body_exited" from="Trigger_area" to="." method="_on_trigger_area_body_exited"]

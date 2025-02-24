@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8038o0i3sy0p"]
+
+[ext_resource type="Script" path="res://house_1_interface.gd" id="1_8t5j6"]
+[ext_resource type="PackedScene" uid="uid://o4qeyc364iq5" path="res://Game/2Characters/MainCharacter/main_character.tscn" id="1_jweme"]
+[ext_resource type="PackedScene" uid="uid://ba2pbvtoih7qu" path="res://Game/1Scene/1House1Interior/house_1_interior.tscn" id="2_qhte0"]
+[ext_resource type="PackedScene" uid="uid://cvcxfhdyfyqir" path="res://Game/3UI/Inventory/Hotbar/canvas_layer.tscn" id="2_wtttf"]
+
+[node name="House1Interface" type="Node"]
+script = ExtResource("1_8t5j6")
+
+[node name="GameInterface" type="Node" parent="."]
+
+[node name="GameObj" type="Node" parent="."]
+
+[node name="Character" type="Node" parent="GameObj"]
+
+[node name="MainCharacter" parent="GameObj/Character" instance=ExtResource("1_jweme")]
+position = Vector2(-65, -109)
+
+[node name="House1Interior" parent="GameObj" instance=ExtResource("2_qhte0")]
+
+[node name="GameUI" type="Node" parent="."]
+
+[node name="CanvasLayer" parent="GameUI" instance=ExtResource("2_wtttf")]

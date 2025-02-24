@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://biqiaah3fuhr6"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_0hqde"]
+[ext_resource type="PackedScene" uid="uid://o4qeyc364iq5" path="res://Game/2Characters/MainCharacter/main_character.tscn" id="1_7flu5"]
+[ext_resource type="PackedScene" uid="uid://ds4708w3sltyk" path="res://Game/1Scene/0FarmScene(Main)/farm(main).tscn" id="1_dgus3"]
+[ext_resource type="PackedScene" uid="uid://cvcxfhdyfyqir" path="res://Game/3UI/Inventory/Hotbar/canvas_layer.tscn" id="3_ujbr3"]
+[ext_resource type="Script" path="res://Game/0Data/canvas_modulate.gd" id="5_yi5dj"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_0hqde")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+process_mode = 3
+script = ExtResource("5_yi5dj")
+
+[node name="GameInterface" type="Node" parent="."]
+
+[node name="Farm(Main)" parent="GameInterface" instance=ExtResource("1_dgus3")]
+
+[node name="GameObjects" type="Node" parent="."]
+
+[node name="Characters" type="Node" parent="GameObjects"]
+
+[node name="MainCharacter" parent="GameObjects/Characters" instance=ExtResource("1_7flu5")]
+position = Vector2(18, -15)
+
+[node name="GameUI" type="Node" parent="."]
+
+[node name="CanvasLayer" parent="GameUI" instance=ExtResource("3_ujbr3")]

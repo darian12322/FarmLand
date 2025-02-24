@@ -1,0 +1,117 @@
+[gd_scene load_steps=16 format=3 uid="uid://ciox07oj0sykb"]
+
+[ext_resource type="Script" path="res://Game/1Scene/1House1Interior/Objects/Script/bed.gd" id="1_carx8"]
+[ext_resource type="Texture2D" uid="uid://mu34kvgrcmlh" path="res://Game/1Scene/1House1Interior/texture/bed_top.png" id="1_kewpr"]
+[ext_resource type="Texture2D" uid="uid://dggcwrqcq3b7u" path="res://Game/1Scene/1House1Interior/texture/Bed_Sleep_top.png" id="2_c3kjg"]
+[ext_resource type="Texture2D" uid="uid://xe804j0yx3yj" path="res://Game/1Scene/1House1Interior/texture/bed_bottom.png" id="2_ftsxc"]
+[ext_resource type="Texture2D" uid="uid://cdb0s41m2o405" path="res://Game/1Scene/1House1Interior/texture/Bed_Sleep_bottom.png" id="4_svhrr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5prr1"]
+atlas = ExtResource("1_kewpr")
+region = Rect2(0, 0, 20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vetvi"]
+atlas = ExtResource("2_c3kjg")
+region = Rect2(0, 0, 20, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tqaxs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5prr1")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vetvi")
+}],
+"loop": true,
+"name": &"Sleep",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnybn"]
+atlas = ExtResource("2_ftsxc")
+region = Rect2(0, 0, 20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cinwd"]
+atlas = ExtResource("4_svhrr")
+region = Rect2(0, 0, 20, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sf3xl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnybn")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cinwd")
+}],
+"loop": true,
+"name": &"Sleep",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clbcu"]
+size = Vector2(8.30189, 7.92453)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1eahc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5g3i6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkl4w"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Bed" type="StaticBody2D"]
+process_mode = 3
+script = ExtResource("1_carx8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+texture_filter = 1
+position = Vector2(4.5, 9)
+scale = Vector2(1.45, 1.45)
+sprite_frames = SubResource("SpriteFrames_tqaxs")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(4.5, 9)
+scale = Vector2(1.45, 1.45)
+sprite_frames = SubResource("SpriteFrames_sf3xl")
+animation = &"Sleep"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -3.5)
+scale = Vector2(2.65, 2.65)
+shape = SubResource("RectangleShape2D_clbcu")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -7.0
+offset_top = -18.0
+offset_right = 17.0
+offset_bottom = 35.0
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_1eahc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5g3i6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rkl4w")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

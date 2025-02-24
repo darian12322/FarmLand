@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2x1c633mvq4o"]
+
+[ext_resource type="Script" path="res://Game/3UI/EndScreen/Script/end_screen.gd" id="1_7fuci"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxapp"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="EndScreen" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_7fuci")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vxapp")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.0
+offset_top = -189.5
+offset_right = 231.0
+offset_bottom = -24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+text = "You feel tired
+"
+
+[node name="EndScreenDeath" type="Timer" parent="."]
+process_mode = 3
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -17.5
+offset_right = 83.0
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "And slowly fall asleep"
+
+[connection signal="timeout" from="EndScreenDeath" to="." method="_on_end_screen_death_timeout"]

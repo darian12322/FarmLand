@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgnvdsgcgms4j"]
+
+[ext_resource type="Script" path="res://Game/3UI/Notifications/Script/notifications.gd" id="1_sfssi"]
+
+[node name="Notifications" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sfssi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 7.0
+offset_top = 590.0
+offset_right = 481.0
+offset_bottom = 642.0
+theme_override_colors/default_color = Color(0.843137, 0.12549, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Game Saved!"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

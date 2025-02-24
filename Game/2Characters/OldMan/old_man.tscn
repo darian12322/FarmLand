@@ -1,0 +1,130 @@
+[gd_scene load_steps=18 format=3 uid="uid://1j8a0omxtsn3"]
+
+[ext_resource type="Texture2D" uid="uid://h0j147lh32ld" path="res://Game/2Characters/OldMan/Texture/OldMan(Front).png" id="1_2g1ov"]
+[ext_resource type="Script" path="res://Game/2Characters/OldMan/old_man.gd" id="1_swkbv"]
+[ext_resource type="Texture2D" uid="uid://bo7bg88t0uk5m" path="res://Game/2Characters/OldMan/Texture/Shadow.png" id="2_jptti"]
+[ext_resource type="Texture2D" uid="uid://cl0v81kaa6fgd" path="res://Game/2Characters/MainCharacter/Texture/OldManRun(Side).png" id="3_hbtu7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vaeg7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfuu3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnbp8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Curve2D" id="Curve2D_uxdm8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -11, 10, 0, 0, 0, 0, -226, 9, 0, 0, 0, 0, -693, 12, 0, 0, 0, 0, -694, 101, 0, 0, 0, 0, -695, 133, 0, 0, 0, 0, -933, 132, 0, 0, 0, 0, -1016, 133)
+}
+point_count = 7
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6kq0"]
+atlas = ExtResource("1_2g1ov")
+region = Rect2(0, 0, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe0u1"]
+atlas = ExtResource("3_hbtu7")
+region = Rect2(0, 0, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28agm"]
+atlas = ExtResource("3_hbtu7")
+region = Rect2(16, 0, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rw0s"]
+atlas = ExtResource("3_hbtu7")
+region = Rect2(32, 0, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0rme"]
+atlas = ExtResource("3_hbtu7")
+region = Rect2(48, 0, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpoeb"]
+atlas = ExtResource("3_hbtu7")
+region = Rect2(64, 0, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ea3na"]
+atlas = ExtResource("3_hbtu7")
+region = Rect2(80, 0, 16, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tpqkd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6kq0")
+}],
+"loop": true,
+"name": &"Idle(front)",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe0u1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28agm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rw0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0rme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpoeb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ea3na")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2em6"]
+height = 38.0
+
+[node name="OldMan" type="CharacterBody2D"]
+script = ExtResource("1_swkbv")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -12.0
+offset_top = -9.0
+offset_right = 2.0
+offset_bottom = 25.0
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_vaeg7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wfuu3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xnbp8")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_uxdm8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-11, 10)
+rotation = -3.13694
+rotates = false
+loop = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D"]
+z_index = 1
+texture_filter = 1
+rotation = 3.13694
+scale = Vector2(1.125, 1.125)
+sprite_frames = SubResource("SpriteFrames_tpqkd")
+animation = &"Run"
+autoplay = "Idle(front)"
+
+[node name="shadow" type="Sprite2D" parent="Path2D/PathFollow2D/AnimatedSprite2D"]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, 14.2222)
+scale = Vector2(1.06945, 0.850071)
+texture = ExtResource("2_jptti")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10, 11)
+shape = SubResource("CapsuleShape2D_h2em6")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

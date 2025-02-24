@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqk7ptta8nd6o"]
+
+[ext_resource type="Texture2D" uid="uid://cl88qnbiea1m4" path="res://Game/1Scene/1House1Interior/texture/bed.png" id="1_61sji"]
+[ext_resource type="Script" path="res://Game/1Scene/1House1Interior/Objects/Script/bed_2.gd" id="1_h1cq8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1pdf"]
+size = Vector2(17, 14.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84kr6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqnhm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qrox"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Bed2" type="StaticBody2D"]
+script = ExtResource("1_h1cq8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, 2)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("1_61sji")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -10.25)
+shape = SubResource("RectangleShape2D_k1pdf")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -7.0
+offset_top = -15.0
+offset_right = 10.0
+offset_bottom = 20.0
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_84kr6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vqnhm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1qrox")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

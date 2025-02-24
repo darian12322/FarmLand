@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0jy4jbsapb44"]
+
+[ext_resource type="Script" path="res://Game/3UI/Clock/Script/clock.gd" id="1_h50p6"]
+[ext_resource type="Texture2D" uid="uid://dt8uw7wkvotnx" path="res://Game/3UI/Clock/Script/Clock.png" id="1_yrncj"]
+
+[node name="Clock" type="CanvasLayer"]
+script = ExtResource("1_h50p6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 133.0
+offset_bottom = 93.0
+texture = ExtResource("1_yrncj")
+
+[node name="Hours" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 29.0
+offset_right = 73.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "10
+"
+
+[node name="Minutes" type="Label" parent="."]
+offset_left = 80.0
+offset_top = 29.0
+offset_right = 120.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "00"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

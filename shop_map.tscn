@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://citjobmsdxra6"]
+
+[ext_resource type="PackedScene" uid="uid://uqymlhsh8ohw" path="res://Game/1Scene/2Shop_Map/shop_map.tscn" id="1_k2cho"]
+[ext_resource type="PackedScene" uid="uid://o4qeyc364iq5" path="res://Game/2Characters/MainCharacter/main_character.tscn" id="2_46610"]
+[ext_resource type="PackedScene" uid="uid://1j8a0omxtsn3" path="res://Game/2Characters/OldMan/old_man.tscn" id="3_p3cas"]
+[ext_resource type="PackedScene" uid="uid://cvcxfhdyfyqir" path="res://Game/3UI/Inventory/Hotbar/canvas_layer.tscn" id="3_y044r"]
+
+[node name="Shop_Map" type="Node"]
+
+[node name="GameInterface" type="Node" parent="."]
+
+[node name="Shop_Map" parent="GameInterface" instance=ExtResource("1_k2cho")]
+position = Vector2(113.408, 34.2977)
+
+[node name="GameObj" type="Node" parent="."]
+
+[node name="MainCharacter" parent="GameObj" instance=ExtResource("2_46610")]
+
+[node name="OldMan" parent="GameObj" instance=ExtResource("3_p3cas")]
+position = Vector2(1243, -102)
+
+[node name="GameUi" type="Node" parent="."]
+
+[node name="CanvasLayer" parent="GameUi" instance=ExtResource("3_y044r")]

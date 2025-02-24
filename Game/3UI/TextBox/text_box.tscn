@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8wcis5mrxuje"]
+
+[ext_resource type="Script" path="res://Game/3UI/TextBox/Script/text_box.gd" id="1_guxdv"]
+[ext_resource type="Texture2D" uid="uid://cl4ddaoish1ew" path="res://Game/3UI/TextBox/Texture/TextBox.png" id="1_rjroh"]
+
+[node name="TextBox" type="CanvasLayer"]
+script = ExtResource("1_guxdv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -422.0
+offset_top = -115.0
+offset_right = 422.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_rjroh")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 833.0
+offset_bottom = 78.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+text = "
+"
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 797.0
+offset_top = 59.0
+offset_right = 837.0
+offset_bottom = 82.0
+text = "Click"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.04
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

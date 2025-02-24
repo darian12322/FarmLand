@@ -1,0 +1,743 @@
+[gd_scene load_steps=28 format=3 uid="uid://brskslp752a6o"]
+
+[ext_resource type="Texture2D" uid="uid://c24jhylg6ft1v" path="res://Game/3UI/Shop_Menu/Texture/ShopMenu_bar.png" id="1_8yrrt"]
+[ext_resource type="Script" path="res://Game/3UI/Shop_Menu/Script/shop_menu.gd" id="1_jjd7j"]
+[ext_resource type="Texture2D" uid="uid://b7anfvd877avm" path="res://Game/3UI/Shop_Menu/Texture/ShopMenu_background.png" id="2_xol0k"]
+[ext_resource type="Texture2D" uid="uid://d8gjq4o1acm4" path="res://Game/3UI/PauseMenu/Texture/Button_selected.png" id="4_mbv7p"]
+[ext_resource type="Texture2D" uid="uid://e66jq04okpm4" path="res://Game/3UI/Inventory/Texture/Button_disa.png" id="4_x7t0g"]
+[ext_resource type="Texture2D" uid="uid://6cu5o7bilnbk" path="res://Game/3UI/PauseMenu/Texture/Button.png" id="5_s3rd1"]
+[ext_resource type="Texture2D" uid="uid://i3j6rflspamk" path="res://Game/3UI/Inventory/Texture/Carrot.png" id="7_nt80g"]
+[ext_resource type="Texture2D" uid="uid://b6qm85u0v23ae" path="res://Game/3UI/Inventory/Texture/Carrot_seeds.png" id="8_djla2"]
+[ext_resource type="Texture2D" uid="uid://bwlypcr52a77i" path="res://Game/3UI/Inventory/Texture/Coin-sheet.png" id="9_a6537"]
+[ext_resource type="AudioStream" uid="uid://bke3d2r8sabha" path="res://Game/4Sounds/cash-register-purchase-87313.mp3" id="10_1d7op"]
+
+[sub_resource type="Animation" id="Animation_3rdw0"]
+resource_name = "1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(276, 700), Vector2(276, 123)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.466667, 0.666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(327, 165), Vector2(367, 163)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.466667, 0.766667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(67, 360), Vector2(583, 360)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Background:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Button:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.766667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Buy:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.766667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sell:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.766667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Button2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.766667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CarrotSells:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Carrots:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Seeds:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("PriceBuy:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Coins:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Coins2:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_eo3yn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(276, 700)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(327, 165)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(67, 360)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Background:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Button:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Buy:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sell:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Button2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CarrotSells:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Carrots:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Seeds:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("PriceBuy:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Coins:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Coins2:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_k4viq"]
+resource_name = "back"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Buy:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sell:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Background:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(367, 163), Vector2(324, 163)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Background:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Background:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(583, 360), Vector2(67, 360)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Bar:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(276, 123), Vector2(276, 123), Vector2(276, 700)]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.1, 0.4, 0.633333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"queue_freee"
+}, {
+"args": [],
+"method": &"turn_on_bypass"
+}, {
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Button2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Coins2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Coins:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("PriceBuy:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Seeds:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Carrots:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CarrotSells:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yc7a2"]
+_data = {
+"1": SubResource("Animation_3rdw0"),
+"RESET": SubResource("Animation_eo3yn"),
+"back": SubResource("Animation_k4viq")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vvf2j"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21x1o"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phwxg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlbua"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lbj6e"]
+texture = ExtResource("4_x7t0g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0urxl"]
+texture = ExtResource("5_s3rd1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5kk1r"]
+texture = ExtResource("4_mbv7p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eryq8"]
+texture = ExtResource("5_s3rd1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x4mpl"]
+texture = ExtResource("4_x7t0g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d6e1i"]
+texture = ExtResource("4_x7t0g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aiipl"]
+texture = ExtResource("4_mbv7p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_itoa4"]
+texture = ExtResource("5_s3rd1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rr1hq"]
+texture = ExtResource("5_s3rd1")
+
+[node name="Shop_Menu" type="CanvasLayer"]
+script = ExtResource("1_jjd7j")
+
+[node name="Bar" type="TextureRect" parent="."]
+z_index = 1
+texture_filter = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 276.0
+offset_top = 376.0
+offset_right = 428.0
+offset_bottom = 827.0
+grow_vertical = 2
+texture = ExtResource("1_8yrrt")
+
+[node name="Background" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 327.0
+offset_top = -159.0
+offset_right = 394.0
+offset_bottom = 201.0
+grow_vertical = 2
+texture = ExtResource("2_xol0k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yc7a2")
+}
+autoplay = "1"
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 873.0
+offset_top = 178.0
+offset_right = 935.0
+offset_bottom = 233.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vvf2j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_21x1o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_phwxg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tlbua")
+text = "X"
+
+[node name="Buy" type="Button" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 444.0
+offset_top = 380.0
+offset_right = 622.0
+offset_bottom = 448.0
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxTexture_lbj6e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0urxl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5kk1r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_eryq8")
+text = "BUY"
+
+[node name="Sell" type="Button" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 682.0
+offset_top = 343.0
+offset_right = 860.0
+offset_bottom = 411.0
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxTexture_x4mpl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0urxl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5kk1r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_eryq8")
+text = "SELL  X1"
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 682.0
+offset_top = 411.0
+offset_right = 860.0
+offset_bottom = 479.0
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxTexture_d6e1i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_aiipl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_itoa4")
+theme_override_styles/normal = SubResource("StyleBoxTexture_rr1hq")
+text = "SELL ALL"
+
+[node name="CarrotSells" type="Label" parent="."]
+visible = false
+offset_left = 776.0
+offset_top = 319.0
+offset_right = 816.0
+offset_bottom = 342.0
+text = "30"
+
+[node name="Carrots" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 708.0
+offset_top = 192.0
+offset_right = 832.0
+offset_bottom = 307.0
+texture = ExtResource("7_nt80g")
+
+[node name="Seeds" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 459.0
+offset_top = 203.0
+offset_right = 601.0
+offset_bottom = 335.0
+texture = ExtResource("8_djla2")
+
+[node name="PriceBuy" type="Label" parent="."]
+visible = false
+offset_left = 532.0
+offset_top = 346.0
+offset_right = 572.0
+offset_bottom = 369.0
+text = "20"
+
+[node name="Coins" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 489.0
+offset_top = 337.0
+offset_right = 529.0
+offset_bottom = 377.0
+texture = ExtResource("9_a6537")
+
+[node name="Coins2" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 734.0
+offset_top = 310.0
+offset_right = 774.0
+offset_bottom = 350.0
+texture = ExtResource("9_a6537")
+
+[node name="Cash-register-purchase-87313" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_1d7op")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Buy" to="." method="_on_buy_pressed"]
+[connection signal="pressed" from="Sell" to="." method="_on_sell_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

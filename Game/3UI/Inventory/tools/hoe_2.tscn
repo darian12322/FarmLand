@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk70bna443vel"]
+
+[ext_resource type="Texture2D" uid="uid://dyxs03hqs0ypk" path="res://Game/3UI/Inventory/Texture/Hoe2-sheet.png" id="1_cuoav"]
+
+[node name="Hoe2" type="TextureRect"]
+texture_filter = 1
+offset_top = -7.0
+offset_right = 47.0
+offset_bottom = 40.0
+texture = ExtResource("1_cuoav")

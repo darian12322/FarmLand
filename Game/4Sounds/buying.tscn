@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://du62rn1envr4d"]
+
+[ext_resource type="AudioStream" uid="uid://bke3d2r8sabha" path="res://Game/4Sounds/cash-register-purchase-87313.mp3" id="1_t52b7"]
+
+[node name="buying" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_t52b7")

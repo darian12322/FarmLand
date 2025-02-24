@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbqjn5eksm07k"]
+
+[ext_resource type="Texture2D" uid="uid://c8ftoulap7vvt" path="res://Game/3UI/Inventory/Texture/Hoe.png" id="1_nphr7"]
+
+[node name="TextureRect" type="TextureRect"]
+texture_filter = 1
+offset_top = -7.0
+offset_right = 47.0
+offset_bottom = 40.0
+texture = ExtResource("1_nphr7")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://irg7f1t4fjqy"]
+
+[ext_resource type="Texture2D" uid="uid://rt6cx6w2sxsi" path="res://Game/1Scene/4Shop_Carpenter_Interior/Texture/Lamp.png" id="1_mvejc"]
+
+[node name="Lamp" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(10, 20)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("1_mvejc")

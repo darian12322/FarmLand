@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://ss6j3dci6pas"]
+
+[ext_resource type="Texture2D" uid="uid://n5devihxtoxd" path="res://Game/1Scene/5MainMenu/texture/Sky.png" id="1_3bbdf"]
+[ext_resource type="Script" path="res://Game/1Scene/5MainMenu/script/start.gd" id="1_ug4b2"]
+[ext_resource type="Texture2D" uid="uid://6cu5o7bilnbk" path="res://Game/3UI/PauseMenu/Texture/Button.png" id="3_db1x3"]
+[ext_resource type="Texture2D" uid="uid://d8gjq4o1acm4" path="res://Game/3UI/PauseMenu/Texture/Button_selected.png" id="4_vw6ae"]
+[ext_resource type="FontFile" uid="uid://dlms3iroyfejw" path="res://Game/1Scene/5MainMenu/texture/Flying Bubble.otf" id="5_68ejn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3yeka"]
+texture = ExtResource("4_vw6ae")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lpyme"]
+texture = ExtResource("3_db1x3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_puo1g"]
+texture = ExtResource("4_vw6ae")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l83cd"]
+texture = ExtResource("3_db1x3")
+
+[sub_resource type="FontVariation" id="FontVariation_f0kyb"]
+base_font = ExtResource("5_68ejn")
+
+[node name="START" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ug4b2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -122.0
+offset_top = -71.0
+offset_right = 1291.0
+offset_bottom = 724.0
+texture = ExtResource("1_3bbdf")
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.5
+offset_top = 3.0
+offset_right = 120.5
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxTexture_3yeka")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lpyme")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_puo1g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_l83cd")
+text = "PLAY
+"
+
+[node name="Settings" type="Button" parent="."]
+texture_filter = 1
+offset_left = 456.0
+offset_top = 414.5
+offset_right = 697.0
+offset_bottom = 501.5
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_lpyme")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_puo1g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_l83cd")
+text = "SETTINGS
+"
+
+[node name="Quit" type="Button" parent="."]
+texture_filter = 1
+offset_left = 456.0
+offset_top = 501.5
+offset_right = 697.0
+offset_bottom = 588.5
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_lpyme")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_puo1g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_l83cd")
+text = "QUIT
+"
+
+[node name="title" type="RichTextLabel" parent="."]
+offset_left = 88.0
+offset_top = 76.0
+offset_right = 1170.0
+offset_bottom = 365.0
+theme_override_colors/default_color = Color(0.83238, 0.442206, 0.077674, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_f0kyb")
+theme_override_font_sizes/normal_font_size = 230
+text = "FARM LAND"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
