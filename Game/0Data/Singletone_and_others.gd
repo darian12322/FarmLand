@@ -31,7 +31,7 @@ var TimePassedForRNG: bool = false
 
 var bypass_for_dialog: bool = false
 var bypass_for_dialog2: bool = false
-var coin: int = 0
+var coin: int = 99999999999
 
 
 var hoe2_bought: bool = false

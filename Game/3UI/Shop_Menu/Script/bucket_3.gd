@@ -2,7 +2,7 @@ extends RigidBody2D
 
 @onready var timer: Timer = $Timer
 @onready var bucket_3: Button = $"../Bucket3"
-var price = 1200
+var price = 700
 var bought: bool = false
 @onready var buying: AudioStreamPlayer2D = $buying
 
